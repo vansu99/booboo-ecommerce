@@ -57,6 +57,7 @@ export const LoginForm = styled.div`
 `;
 
 export const LoginTitle = styled.h3`
+  text-align: center;
   margin-bottom: 3rem;
   font-size: 2.8rem;
   font-family: var(--title-font);

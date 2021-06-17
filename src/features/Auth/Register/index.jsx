@@ -73,9 +73,7 @@ const Register = () => {
         </LoginLeft>
         <LoginRight>
           <LoginForm>
-            <LoginTitle>
-              Boo<span>Boo</span>
-            </LoginTitle>
+            <LoginTitle>Sign Up</LoginTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
               <FormControl>
                 <FormLabel>Username</FormLabel>

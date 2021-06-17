@@ -83,11 +83,11 @@ export const FooterNewsletterImprove = styled(FooterNewsletterBox)`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     h4 {
-      font-size: 2.3rem;
+      font-size: 2.1rem;
     }
     p,
     a {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
 `;
@@ -121,10 +121,10 @@ export const FooterNewsletterApp = styled(FooterNewsletterBox)`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     h4 {
-      font-size: 2.3rem;
+      font-size: 2.1rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -173,10 +173,10 @@ export const FooterNewsletterForm = styled(FooterNewsletterBox)`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     h4 {
-      font-size: 2.3rem;
+      font-size: 2.1rem;
     }
     p {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
   }
 `;

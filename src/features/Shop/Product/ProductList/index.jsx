@@ -1,15 +1,14 @@
 import Card from 'components/Card';
+import queryString from 'query-string';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { RiLightbulbLine } from 'react-icons/ri';
 import ReactPaginate from 'react-paginate';
-import queryString from 'query-string';
 import { useSelector } from 'react-redux';
-import SkeletonProduct from '../SkeletonProduct';
+import { useLocation } from 'react-router-dom';
 import ProductSort from '../ProductFilterBar/ProductSort';
+import SkeletonProduct from '../SkeletonProduct';
 import { Pagination, ProductMain, ProductSearchItemResult, ProductSearchResultHeader } from '../style';
-import FilterViewer from '../ProductFilterBar/FilterViewer';
 
 const ProductLists = ({ changePagination, changeSort, curSort, filters }) => {
   const location = useLocation();
@@ -41,7 +40,7 @@ const ProductLists = ({ changePagination, changeSort, curSort, filters }) => {
       {/* <FilterViewer filters={filters} /> */}
       <ProductSearchItemResult>
         {loading ? (
-          <SkeletonProduct length={9} />
+          <SkeletonProduct length={9} width="25" space="1" />
         ) : (
           !!productLists.length &&
           productLists.map((product) => <Card key={product._id} width="25" space="1.5" {...product} />)

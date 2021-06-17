@@ -15,19 +15,29 @@ const SkeletonPulse = styled.div`
 `;
 
 export const SkeletonImage = styled(SkeletonPulse)`
-  width: 25rem;
-  height: 37rem;
+  width: 100%;
+  height: 25rem;
   border-radius: 5px;
 `;
 
 export const SSkeletonLine = styled(SkeletonPulse)`
-  width: 25rem;
+  width: 100%;
   height: 2rem;
   border-radius: 5px;
   margin: 1rem 0;
 `;
 
 export const LayoutSkeletonItem = styled.div`
-  margin: 0 1.5rem 5rem;
-  width: calc(25% - 3rem);
+  ${({ space }) => space && `margin: 0 ${space}rem 5rem`};
+  ${({ width, space }) => width && `width: calc(${width}% - ${space * 2}rem)`};
+
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    ${({ space }) => space && `margin: 0 0.5rem 4rem`};
+    ${({ width }) => width && `width: calc(${width * 2}% - 1rem)`};
+  }
+
+  @media ${(props) => props.theme.mediaQueries.minMedium} {
+    ${({ space }) => space && `margin: 0 1rem 4rem`};
+    ${({ width }) => width && `width: calc(${width}% - 2rem)`};
+  }
 `;

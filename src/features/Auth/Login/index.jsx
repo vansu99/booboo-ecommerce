@@ -74,7 +74,7 @@ const Login = () => {
         <LoginRight>
           <LoginForm>
             <LoginTitle>
-              Boo<span>Boo</span>
+              Sign In
             </LoginTitle>
             <form onSubmit={handleSubmit(onSubmit)}>
               <FormControl>

@@ -17,6 +17,15 @@ export const mixins = {
     justify-content: space-between;
     align-items: center;
   `,
+  blockCenter: css`
+    display: block;
+    margin: 0 auto;
+  `,
+  imgCover: css`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  `,
   fadeIn: keyframes`
     from {
       opacity: 0;
@@ -36,9 +45,24 @@ export const mixins = {
   hide: css`
     opacity: 0;
     visibility: hidden;
+    transition: all 0.2s ease;
   `,
   show: css`
     opacity: 1;
     visibility: visible;
+  `,
+  textSingle: css`
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  `,
+  textTruncate: css`
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
   `,
 };

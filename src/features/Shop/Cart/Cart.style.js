@@ -55,20 +55,21 @@ export const CartLeftBox = styled.div`
   display: grid;
   display: -moz-grid;
   display: -ms-inline-grid;
-  grid-template-columns: 20rem 1fr 15rem 15rem;
+  grid-template-columns: 20rem 1fr;
   grid-template-rows: auto;
   grid-gap: 1rem;
   margin-bottom: 2rem;
 
   @media (max-width: 767px) {
-    grid-template-areas:
-      'h1 h2'
-      'h1 h3'
-      'h1 h4';
+    grid-template-columns: 10rem 1fr;
   }
 `;
 
 export const CartItem = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   img {
     width: 100%;
     height: 15rem;
@@ -100,17 +101,22 @@ export const CartItem = styled.div`
   }
 
   @media (max-width: 767px) {
+    flex-direction: column;
     &:nth-child(1) {
-      grid-area: h1;
+      grid-row: 1/4;
     }
     &:nth-child(2) {
-      grid-area: h2;
     }
     &:nth-child(3) {
-      grid-area: h3;
     }
     &:nth-child(2) {
-      grid-area: h4;
+    }
+
+    .cart-title {
+      margin-bottom: 0.5rem;
+    }
+    .cart-action {
+      margin-top: 0.5rem;
     }
   }
 `;
@@ -121,13 +127,13 @@ export const CartItemPrice = styled.div`
   align-items: flex-end;
 
   .cart-price {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 0.4rem;
   }
 
   .cart-price-original {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: gray;
     display: flex;
     align-items: center;
@@ -144,6 +150,17 @@ export const CartItemPrice = styled.div`
     height: 13px;
     margin: 0 1rem;
     background-color: gray;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: row;
+    align-items: baseline;
+    margin-top: 0.6rem;
+
+    .cart-price {
+      margin-bottom: 0;
+      margin-right: 1rem;
+    }
   }
 `;
 
@@ -197,6 +214,46 @@ export const CartContentInfo = styled(CartContent)`
 
 export const CartContentAddress = styled.div`
   color: gray;
+
+  .tags {
+    margin-top: 1rem;
+    .tag {
+      background: rgba(255, 87, 34, 0.1);
+      border-radius: 3px 0 0 3px;
+      color: #ee4d2d;
+      display: inline-block;
+      height: 26px;
+      line-height: 28px;
+      padding: 0 20px 0 23px;
+      position: relative;
+      margin: 0 10px 10px 0;
+      text-decoration: none;
+      transition: color 0.2s linear;
+
+      &:before {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0 1px rgba(255, 87, 34, 0.1);
+        content: '';
+        height: 8px;
+        left: 9px;
+        position: absolute;
+        width: 8px;
+        top: 8px;
+      }
+
+      &:after {
+        background: #fff;
+        border-bottom: 13px solid transparent;
+        border-left: 10px solid rgba(255, 87, 34, 0.1);
+        border-top: 13px solid transparent;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
 `;
 
 export const CartTotal = styled.div`
@@ -210,17 +267,34 @@ export const CartTotal = styled.div`
 
 export const CartTotalProvisional = styled(CartTotal)`
   margin-bottom: 1rem;
-  span {
-    font-weight: bold;
+
+  .freeship {
+    p {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 1.7rem;
+      color: #7f828a;
+
+      .fee-shipping {
+        margin-left: 0.6rem;
+        font-weight: 500;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .fee {
+    color: #7f828a;
+    font-weight: 500;
     font-size: 1.7rem;
   }
 `;
 
 export const CartOrderTotal = styled(CartTotal)`
   span {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.8rem;
-    color: red;
+    color: #7b7676;
   }
 `;
 
@@ -245,6 +319,11 @@ export const DetailQuantity = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 767px) {
+    justify-content: flex-start;
+    margin-top: 0.6rem;
+  }
 `;
 
 export const DetailQuantityBox = styled.span`

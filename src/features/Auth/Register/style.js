@@ -59,11 +59,10 @@ export const LoginForm = styled.div`
 export const LoginTitle = styled.h3`
   text-align: center;
   margin-bottom: 3rem;
-  font-size: 2.8rem;
-  font-family: var(--title-font);
-  span {
-    color: #ff6a88;
-  }
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: var(--secondary-font);
+  color: #ff6a88;
 `;
 
 export const FormControl = styled.div`

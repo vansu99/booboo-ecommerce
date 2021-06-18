@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiFillStar } from 'react-icons/ai';
+import { formatPriceUs } from 'helpers/formatPrice';
 import {
   ImageContainer,
   OriginalPrice,
@@ -40,10 +41,10 @@ const Card = ({ width, space, ...product }) => {
           <TrendingProductBodyPrice>
             <span>
               <Price>
-                <SalePrice>${product?.salePrice || 20}</SalePrice>
+                <SalePrice>{formatPriceUs(product?.salePrice) || 0}</SalePrice>
               </Price>
               <Price>
-                <OriginalPrice>${product?.price}</OriginalPrice>
+                <OriginalPrice>{formatPriceUs(product?.price)}</OriginalPrice>
               </Price>
             </span>
           </TrendingProductBodyPrice>

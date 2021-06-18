@@ -95,7 +95,6 @@ export const AccountOption = styled.ul`
   box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
   min-width: 15rem;
   z-index: 1000;
-  transition: all 0.3s linear;
   ${mixins.hide}
 
   &::before {
@@ -117,6 +116,10 @@ export const AccountOption = styled.ul`
     &:hover {
       color: #ff6a88;
     }
+  }
+
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    left: -210%;
   }
 `;
 

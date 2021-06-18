@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { mixins } from 'styles/mixins';
 
 export const TrendingProductItem = styled.div`
   position: relative;
@@ -39,7 +40,7 @@ export const TrendingProductImage = styled.div`
   }
 
   @media ${(props) => props.theme.mediaQueries.minMedium} {
-    height: 21rem;
+    height: 24rem;
   }
 
   @media ${(props) => props.theme.mediaQueries.minLarge} {
@@ -55,10 +56,14 @@ export const ImageContainer = styled(Link)`
   display: block;
   height: 100%;
   min-height: 100%;
+  transition: all 0.4s linear;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    ${mixins.imgCover}
   }
 `;
 
@@ -133,7 +138,7 @@ export const TrendingProductBodyName = styled(Link)`
   overflow: hidden;
 
   @media ${(props) => props.theme.mediaQueries.medium} {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 `;
 
@@ -154,11 +159,14 @@ export const Price = styled.span`
   line-height: normal;
   letter-spacing: 3px;
   text-align: center;
-  margin-right: 10px;
   user-select: none;
 
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
   @media ${(props) => props.theme.mediaQueries.medium} {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 `;
 

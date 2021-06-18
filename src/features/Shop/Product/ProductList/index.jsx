@@ -40,7 +40,7 @@ const ProductLists = ({ changePagination, changeSort, curSort, filters }) => {
       {/* <FilterViewer filters={filters} /> */}
       <ProductSearchItemResult>
         {loading ? (
-          <SkeletonProduct length={9} width="25" space="1" />
+          <SkeletonProduct length={productLists?.length || 9} width="25" space="1" />
         ) : (
           !!productLists.length &&
           productLists.map((product) => <Card key={product._id} width="25" space="1.5" {...product} />)

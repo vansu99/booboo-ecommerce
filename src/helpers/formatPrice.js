@@ -6,3 +6,7 @@ export function formatPrice(number) {
   }
   return price.reverse().join('');
 }
+
+export function formatPriceUs(number) {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number);
+}

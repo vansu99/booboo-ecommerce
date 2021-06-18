@@ -46,10 +46,14 @@ const PopupContent = styled.div`
     padding: 1rem;
     height: 106px;
 
-    p {
+    .popup-content {
+      height: 100%;
       color: #000;
       font-size: 1.6rem;
       font-family: var(--primary-font);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .popup-actions {
@@ -82,7 +86,6 @@ const PopupContent = styled.div`
 
 const Popup = ({ children, onClick, showPopup, setShowPopup }) => {
   const ref = useRef();
-  console.log(showPopup);
 
   useEffect(() => {
     if (showPopup) {
@@ -112,16 +115,18 @@ const Popup = ({ children, onClick, showPopup, setShowPopup }) => {
         <PopupContent ref={ref}>
           <h3 className="popup-head">Thông báo</h3>
           <div className="popup-body">
-            <p>{children}</p>
+            <div className="popup-content">{children}</div>
           </div>
-          <div className="popup-actions">
-            <button className="btn-disable" onClick={handleClosePopup}>
-              Hủy
-            </button>
-            <button className="btn-remove" onClick={handleClick}>
-              Xóa
-            </button>
-          </div>
+          {onClick ? (
+            <div className="popup-actions">
+              <button className="btn-disable" onClick={handleClosePopup}>
+                Hủy
+              </button>
+              <button className="btn-remove" onClick={handleClick}>
+                Xóa
+              </button>
+            </div>
+          ) : null}
         </PopupContent>
       </Overlay>
     </StyledPopup>

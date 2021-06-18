@@ -24,6 +24,8 @@ import {
   StyledDetail,
   RelatedProducts,
 } from './ProductDetail.style';
+import { formatPriceUs } from 'helpers/formatPrice';
+
 
 const Detail = () => {
   const {
@@ -77,8 +79,8 @@ const Detail = () => {
             <DetailContent>
               <DetailTitle>{product?.title}</DetailTitle>
               <DetailPrice>
-                £{product?.salePrice || 20}
-                <span className="original-price">£{product?.price}</span>
+                {formatPriceUs(product?.salePrice) || 20}
+                <span className="original-price">{formatPriceUs(product?.price)}</span>
                 <span className="promotion">{product?.promotion}%</span>
               </DetailPrice>
               <Line></Line>

@@ -83,11 +83,11 @@ export const FooterNewsletterImprove = styled(FooterNewsletterBox)`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     h4 {
-      font-size: 2.1rem;
+      font-size: 1.9rem;
     }
     p,
     a {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 `;
@@ -97,6 +97,7 @@ export const FooterNewsletterApp = styled(FooterNewsletterBox)`
     font-family: var(--secondary-font);
     font-weight: 600;
     letter-spacing: 2px;
+    font-size: 1.9rem;
   }
 
   p {
@@ -121,10 +122,10 @@ export const FooterNewsletterApp = styled(FooterNewsletterBox)`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     h4 {
-      font-size: 2.1rem;
+      font-size: 1.9rem;
     }
     p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 
@@ -173,10 +174,10 @@ export const FooterNewsletterForm = styled(FooterNewsletterBox)`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     h4 {
-      font-size: 2.1rem;
+      font-size: 1.9rem;
     }
     p {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { mixins } from 'styles/mixins';
 
 export const Header = styled.div`
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
   background: #fff;

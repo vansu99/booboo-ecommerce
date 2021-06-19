@@ -20,11 +20,11 @@ const Trending = () => {
   return (
     <StyledTrending>
       <TrendingContainer>
-        <SectionTitle>Trending Product</SectionTitle>
+        <SectionTitle>Trendings</SectionTitle>
         <div>
           <TrendingProduct>
             {loading ? (
-              <SkeletonProduct length={5} width="20" space="1" />
+              <SkeletonProduct items={productLists?.length} width="20" space="1" />
             ) : (
               !!productLists?.length && productLists.map((product) => <Card key={product._id} {...product} />)
             )}

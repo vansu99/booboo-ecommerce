@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  //padding-top: 3rem;
+  margin-top: 10.2rem;
 `;

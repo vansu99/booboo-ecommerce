@@ -26,6 +26,7 @@ export const StyledHero = styled.section`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     min-height: 50vh;
+    background-position: unset;
   }
 `;
 
@@ -53,7 +54,7 @@ export const HeroOffer = styled.h3`
   }
 
   @media ${(props) => props.theme.mediaQueries.medium} {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 `;
 
@@ -97,6 +98,10 @@ export const HeroDesc = styled.text`
   text-transform: capitalize;
   font-size: 2.4rem;
   margin-bottom: 2.6rem;
+
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    font-size: 1.9rem;
+  }
 `;
 
 export const HeroButton = styled.button`

@@ -166,7 +166,6 @@ export const Price = styled.span`
   }
 
   @media ${(props) => props.theme.mediaQueries.medium} {
-    font-size: 1.6rem;
   }
 `;
 

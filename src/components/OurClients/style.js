@@ -32,6 +32,12 @@ export const SectionTitle = styled.h2`
     height: 4px;
     background-color: red;
   }
+
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    font-size: 3.8rem;
+  }
 `;
 
 export const SliderContainer = styled(Slider)`

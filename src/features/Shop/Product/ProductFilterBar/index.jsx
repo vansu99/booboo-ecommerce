@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { BiFilterAlt } from 'react-icons/bi';
-import { IoIosClose } from 'react-icons/io';
+import { BsFilter } from 'react-icons/bs';
 import { FilterPanel, FilterStatus, FilterMobileClose } from '../style';
 import FilterByCategory from './FilterComponent/FilterByCategory';
 import FilterByPrice from './FilterComponent/FilterByPrice';
@@ -35,7 +35,7 @@ const ProductFilterBar = ({ filters, onChange }) => {
   return (
     <FilterPanel show={show}>
       <FilterMobileClose onClick={handleToggleFilterBar}>
-        <IoIosClose />
+        <BsFilter /> <span>Filter</span>
       </FilterMobileClose>
       <FilterStatus>
         <BiFilterAlt />

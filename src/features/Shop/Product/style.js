@@ -43,32 +43,37 @@ export const FilterPanel = styled.div`
   @media ${(props) => props.theme.mediaQueries.medium} {
     width: 25rem;
     position: fixed;
+    top: 120px;
+    height: calc(100% - 120px);
     left: ${(props) => (props.show ? 0 : '-100%')};
-    top: 0;
-    height: 100%;
-    z-index: 99;
+    z-index: 999;
     overflow: auto;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: #fff;
-    transition: left 356ms ease-in-out;
-  }
-
-  @media ${(props) => props.theme.mediaQueries.large} {
-    display: none;
+    transition: left 0.3s ease;
   }
 `;
 
 export const FilterMobileClose = styled.div`
-  display: none;
+  @media ${(props) => props.theme.mediaQueries.minLarge} {
+    display: none;
+  }
   @media ${(props) => props.theme.mediaQueries.medium} {
-    display: block;
+    ${mixins.flexCenter}
+    position: fixed;
+    top: 10.2rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 1.6rem;
+    z-index: 99;
+    font-size: 1.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
     cursor: pointer;
-    text-align: right;
-    border-bottom: 1px solid #cccccc45;
-    margin-bottom: 1.5rem;
-    padding: 0 0.5rem;
+
     svg {
-      font-size: 2.7rem;
+      font-size: 2.3rem;
     }
   }
 `;
@@ -178,6 +183,7 @@ export const ProductMain = styled.div`
   @media ${(props) => props.theme.mediaQueries.large} {
     width: 100%;
     padding: 0 0 2rem;
+    margin-top: 2rem;
   }
 `;
 
@@ -205,6 +211,10 @@ export const ProductSearchResultHeader = styled.div`
       font-weight: bold;
     }
   }
+
+  @media ${(props) => props.theme.mediaQueries.medium} {
+    margin: 1.5rem 0;
+  }
 `;
 
 export const ProductSorBar = styled.div`
@@ -221,9 +231,24 @@ export const ProductSorBar = styled.div`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     background-color: #fff;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
     .sort-label {
+      display: none;
+    }
+
+    .category-label {
+      h3 {
+        font-weight: 500;
+        font-size: 1.9rem;
+      }
+    }
+  }
+
+  @media ${(props) => props.theme.mediaQueries.minLarge} {
+    .category-label {
       display: none;
     }
   }
@@ -236,7 +261,7 @@ export const ProductSortByOptions = styled.div`
   align-items: stretch;
 
   @media ${(props) => props.theme.mediaQueries.medium} {
-    justify-content: space-around;
+    justify-content: flex-end;
   }
 `;
 

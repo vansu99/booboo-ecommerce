@@ -1,12 +1,6 @@
 import React from 'react';
 import CustomSelect from 'components/Select';
-import {
-  ProductSorBar,
-  ProductSortByOptions,
-  ProductSortOptionItem,
-  ProductSortOptionSelect,
-  ProductFilterMobile,
-} from '../style';
+import { ProductSorBar, ProductSortByOptions, ProductSortOptionItem, ProductSortOptionSelect } from '../style';
 
 const optionSort = [
   { value: 'price', label: 'Giá: Thấp đến Cao' },
@@ -21,9 +15,11 @@ const ProductSort = ({ curSort, onChange }) => {
   return (
     <ProductSorBar>
       <span className="sort-label">Sắp xếp theo</span>
+      <div className="category-label">
+        <h3>BooBoo's Tops</h3>
+      </div>
       <ProductSortByOptions>
         <ProductSortOptionItem onClick={() => handleSort('-sold')}>Bán chạy</ProductSortOptionItem>
-        <ProductFilterMobile>Filter</ProductFilterMobile>
         <ProductSortOptionSelect>
           <CustomSelect options={optionSort} selectLabel="Giá" onChange={handleSort} curSort={curSort} />
         </ProductSortOptionSelect>

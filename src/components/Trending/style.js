@@ -31,6 +31,7 @@ export const SectionTitle = styled.h2`
 
   @media ${(props) => props.theme.mediaQueries.medium} {
     margin-bottom: 3rem;
+    padding-bottom: 2rem;
     font-size: 3.8rem;
   }
 `;

@@ -32,9 +32,9 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 4px;
     }
 
-    --body-font-family: 'Open Sans',  sans-serif;
-    --secondary-font: 'Montserrat', sans-serif;
-    --title-font: 'Kaushan Script', cursive;
+    --body-font-family: 'Poppins',  sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+    --title-font: 'Archivo', sans-serif;
     --bg-primary: "#FFFFFF";
     --bg-hover: "#373737";
     --container-width: 1200px;

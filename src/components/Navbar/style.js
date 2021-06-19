@@ -2,6 +2,14 @@ import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { mixins } from 'styles/mixins';
 
+export const Header = styled.div`
+  position: sticky;
+  top: 0;
+  background: #fff;
+  left: 0;
+  z-index: 1000;
+`;
+
 export const HeaderTop = styled.div`
   border-bottom: 1px solid #e4e9f2;
   width: 100%;
@@ -179,7 +187,7 @@ export const MenuList = styled.ul`
     left: ${({ mobileNav }) => (mobileNav ? 0 : '-100%')};
     top: 0;
     background-color: #ffffff;
-    z-index: 99;
+    z-index: 9999;
     width: 100%;
     margin: 0;
     transition: left 0.3s linear;
@@ -381,16 +389,32 @@ export const SearchBox = styled.div`
 
 export const Search = styled.div`
   display: block;
-  @media ${(props) => props.theme.mediaQueries.large} {
+
+  .search-mobile-close {
     position: absolute;
+    right: 3%;
+    top: 2%;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  @media ${(props) => props.theme.mediaQueries.large} {
+    position: fixed;
     width: 100%;
-    top: 10rem;
+    top: ${({ showSearch }) => (showSearch ? 0 : '-100%')};
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 20;
-    display: ${({ showSearch }) => (showSearch ? 'block' : 'none')};
+    background-color: #fff;
+    z-index: 100;
+    height: 100vh;
+    transition: top 0.3s ease;
+  }
+
+  @media ${(props) => props.theme.mediaQueries.minLarge} {
+    .search-mobile-close {
+      display: none;
+    }
   }
 `;
 
@@ -423,21 +447,31 @@ export const HeaderSearch = styled.div`
 
   svg {
     font-size: 1.9rem;
+
+    @media ${(props) => props.theme.mediaQueries.minLarge} {
+    }
   }
 
   @media ${(props) => props.theme.mediaQueries.large} {
-    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 0;
     border-radius: 0;
     padding: 0;
+    transition: all 0.3s ease;
 
     .search-input {
-      width: 100%;
-      padding: 1.4rem 1.5rem 1.2rem;
-      background-color: #f9e7e9;
-      height: auto;
-      z-index: 1;
-      font-size: 1.6rem;
+      overflow: hidden;
+      height: 3.5rem;
+      color: #000;
+      font-size: 13px;
+      width: 80%;
+      text-align: center;
+      padding: 0 40px 0 8px;
+      background-color: #fff;
+      border-bottom: 1px solid #000;
     }
   }
 `;

@@ -4,6 +4,7 @@ import { mixins } from 'styles/mixins';
 
 export const Header = styled.div`
   position: sticky;
+  width: 100%;
   top: 0;
   background: #fff;
   left: 0;
@@ -12,7 +13,6 @@ export const Header = styled.div`
 
 export const HeaderTop = styled.div`
   border-bottom: 1px solid #e4e9f2;
-  width: 100%;
 `;
 
 export const NavBarTop = styled.div`

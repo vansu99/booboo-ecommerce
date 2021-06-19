@@ -39,7 +39,7 @@ const ProductLists = ({ changePagination, changeSort, curSort }) => {
       <ProductSort curSort={curSort} onChange={onChangeSort} />
       <ProductSearchItemResult>
         {loading ? (
-          <SkeletonProduct length={6} width="25" space="1" />
+          <SkeletonProduct items={productLists?.length} width="25" space="1" />
         ) : (
           !!productLists.length &&
           productLists.map((product) => <Card key={product._id} width="25" space="1.5" {...product} />)

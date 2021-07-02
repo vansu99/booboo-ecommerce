@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import { mixins } from 'styles/mixins';
 
 export const Header = styled.div`
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   background: #fff;
   left: 0;
   z-index: 1000;
+  user-select: none;
+  transition-property: height;
+  transition-duration: 0.2s;
 `;
 
 export const HeaderTop = styled.div`

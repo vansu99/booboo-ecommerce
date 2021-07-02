@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-export const Main = styled.main`
-  margin-top: 10.2rem;
-`;
+export const Main = styled.main``;
